@@ -21,10 +21,21 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
         with:
           targets: wasm32-unknown-unknown
+          
+      - name: add t
+        run: |
+          rustup component add rust-src
 
       - name: Check and test
         run: |
-          rustup component add rust-src
+          cd wordle
+          cargo fmt --all --check
+          cargo clippy --all-targets -- -D warnings -A unused-imports
+          cargo t
+
+      - name: Check and test
+        run: |
+          cd session
           cargo fmt --all --check
           cargo clippy --all-targets -- -D warnings -A unused-imports
           cargo t
