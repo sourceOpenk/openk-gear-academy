@@ -1,0 +1,23 @@
+[package]
+name = "game-session"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+gear-core = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+gstd = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+gmeta = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+game-session-io.path = "io"
+wordle.path = "../wordle"
+wordle-io.path = "../wordle/io"
+
+[build-dependencies]
+gear-wasm-builder = { git = "https://github.com/gear-tech/gear.git", tag = "v1.7.0" }
+game-session-io.path = "io"
+wordle.path = "../wordle"
+
+[dev-dependencies]
+gtest = { git = "https://github.com/gear-tech/gear", tag = "v1.7.0" }
+game-session-io.path = "io"
+wordle.path = "../wordle"
+wordle-io.path = "../wordle/io"
