@@ -2,7 +2,6 @@
 
 use game_session_io::*;
 use gstd::{exec, msg, prelude::*, ActorId};
-use wordle::WORD_LENGTH;
 use wordle_io::{Action as WordleAction, Event as WordleEvent};
 
 static mut GAME_SESSION: Option<GameSession> = None;
@@ -148,7 +147,7 @@ fn check_word_action(game_session: &mut GameSession, word: String) {
         {
             assert!(user == msg::source());
 
-            if correct_positions.len() == WORD_LENGTH {
+            if correct_positions.len() == 5 {
                 user_state.status = Some(UserStatus::Win);
                 msg::reply(
                     GameSessionEvent::GameOver {
