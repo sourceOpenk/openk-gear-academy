@@ -1,6 +1,6 @@
 #![no_std]
 
-use gmeta::{In, InOut, Out, Metadata};
+use gmeta::{In, InOut, Metadata, Out};
 use gstd::{string::String, vec::Vec, ActorId, Decode, Encode, MessageId, TypeInfo};
 use wordle_io::Event as WordleEvent;
 
